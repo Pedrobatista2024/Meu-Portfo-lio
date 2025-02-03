@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="style-feedback.css">
+</head>
+<body>
+    <h1>Página Principal</h1>
+    <form id="feedback-form">
+        <label for="username">Nome (opcional):</label>
+        <input type="text" id="username"><br><br>
+        <label for="company">Empresa (opcional):</label>
+        <input type="text" id="company"><br><br>
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" required></textarea><br><br>
+        <button type="button" onclick="saveFeedback()">Salvar Feedback</button>
+    </form>
+    <br>
+    <a href="password.html">Ver Feedbacks</a>
+    <button class="buttonn" onclick="goBack()">Voltar</button>
+
+    <script src="assets/js/app.js"></script>
+</body>
+<script>
+    function saveFeedback() {
+    const username = document.getElementById('username').value || 'Anônimo';
+    const company = document.getElementById('company').value || 'Sem Empresa';
+    const feedback = document.getElementById('feedback').value;
+
+    if (!feedback) {
+        alert('Por favor, preencha o campo de feedback.');
+        return;
+    }
+
+    const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+    feedbacks.push({ username, company, feedback });
+
+    localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+
+    alert('Feedback salvo com sucesso!');
+    document.getElementById('feedback-form').reset();
+}
+function goBack() {
+    window.location.href = 'index.html';
+}
+
+// Chama a função ao carregar a página
+window.onload = loadFeedbacks;
+</script>
+</html>
