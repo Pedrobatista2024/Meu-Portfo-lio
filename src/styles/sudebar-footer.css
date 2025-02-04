@@ -2,7 +2,6 @@ body {
     background-color: #000;
     font-family: var(--font-dm-sans);
 }
-
 .sidebar {
     position: fixed;
     top: 0;
@@ -11,21 +10,18 @@ body {
     padding: 12px;
     width: 300px;
 }
-
 .sidebar_navigation {
     background-color: #121212;
     border-radius: 8px;
-    padding: 16px 0 0 16px;
+    padding:16px 0 0 16:
     overflow: hidden;
 }
-
-.sidebar_navigation .logo {
+. .sidebar_navigation .logo {
     background: #121212;
     display: flex;
     border-radius: 8px;
     padding: 16px 0 0 16px;
 }
-
 .foto img {
     float: left;
     margin: 10px;
@@ -35,19 +31,16 @@ body {
     margin-right: 10px;
     border-radius: 50%;
     transition: background-color 0.3s ease;
-    cursor: pointer;
+    cursor: pointer;   
     transition: background-color 0.3s ease;
 }
-
 .sidebar nav ul {
     margin-top: 10px;
     padding: 0 10px 10px 20px;
 }
-
 .sidebar ul li {
     padding: 6px 5px 10px 20px;
 }
-
 .sidebar nav ul li a {
     color: #b3b3b3;
     text-decoration: none;
@@ -113,7 +106,7 @@ body {
     border-radius: 10px;
 }
 
-.section-apresent .section-apresent__content {
+.section-apresent .section-apresent__content{
     display: flex;
     flex-direction: column;
 }
@@ -123,11 +116,11 @@ body {
     color: #fefbfb;
 }
 
-.section-apresent__content .title {
+.section-apresent__content .title{
     font-weight: 700;
 }
 
-.section-apresent__content .subtitle {
+.section-apresent__content .subtitle{
     font-weight: 500;
     font-size: 12px;
 }
@@ -148,7 +141,7 @@ body {
 }
 
 .sidebar .cookies {
-    margin: 25px 20px;
+    margin: 25px 20px; 
 }
 
 .sidebar .cookies a {
@@ -162,7 +155,7 @@ body {
     text-decoration: underline;
 }
 
-.languages .languages__button {
+.languages .languages__button{
     align-items: center;
     background-color: #0077b5;
     border: 1px solid #0077b5;
@@ -213,52 +206,11 @@ body {
 }
 
 a {
-    color: white;
-    text-decoration: none;
+    color: white; /* Define a cor do link como branca */
+    text-decoration: none; /* Remove o sublinhado do link */
 }
 
 a:hover {
-    color: lightgray;
-    text-decoration: underline;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        height: auto; /* or a specific height */
-        bottom: auto; /* remove fixed bottom */
-        position: relative; /* or static if you don't want it fixed */
-        overflow-y: auto; /* Add scroll if content overflows */
-    }
-
-    .disclainer-premium {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center horizontally */
-        padding: 10px; /* Reduce padding */
-    }
-
-    .disclainer-premium button {
-        margin-top: 10px; /* Add margin between elements */
-        width: 100%; /* Make button full width */
-    }
-    .section-apresent{
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .library .library__button {
-        flex-direction: column; /* Stack icon and text */
-        align-items: center; /* Center content */
-        padding: 10px; /* Reduce padding */
-    }
-
-    .library .library__button .fa {
-        margin-right: 0; /* Remove margin */
-        margin-bottom: 5px; /* Add margin below icon */
-    }
-    .section-apresent{
-        flex-direction: column;
-    }
+    color: lightgray; /* Define a cor do link quando o mouse está sobre ele */
+    text-decoration: underline; /* Adiciona o sublinhado ao passar o mouse por cima */
 }
