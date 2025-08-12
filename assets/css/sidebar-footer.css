@@ -188,3 +188,86 @@ body {
     margin: 8px;
     width: 170px;
 }
+
+/* Media Queries para Responsividade */
+
+/* Telas menores que 1024px (Tablets e Desktops menores) */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 250px;
+  }
+
+  .main-container {
+    margin-left: 260px;
+  }
+}
+
+/* Telas menores que 768px (Tablets em modo retrato) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .sidebar_navigation {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .sidebar_navigation .logo a {
+    font-size: 20px;
+    padding: 5px;
+  }
+
+  .sidebar_navigation ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+  }
+  
+  .sidebar_navigation ul li {
+    padding: 0;
+  }
+
+  .sidebar_navigation ul li a {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .sidebar_navigation ul li .fa {
+    display: block;
+    margin: 0 auto 5px;
+    font-size: 18px;
+    padding-right: 0;
+  }
+
+  .portfolio-info {
+    display: none; /* Oculta a seção de apresentação em telas pequenas para economizar espaço */
+  }
+
+  .legal-links,
+  .language-selector {
+    display: none; /* Oculta o rodapé em telas pequenas para economizar espaço */
+  }
+  
+  .main-container {
+    margin-left: 0;
+    padding-top: 10px;
+  }
+}
+
+/* Telas menores que 480px (Celulares) */
+@media (max-width: 480px) {
+  .sidebar_navigation ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sidebar_navigation ul li {
+    flex-basis: 50%;
+    text-align: center;
+  }
+}
