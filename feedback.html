@@ -2,50 +2,91 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Página Principal</title>
-    <link rel="stylesheet" href="style-feedback.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Pedro Batista</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/vars.css">
+    <link rel="stylesheet" href="./assets/css/sidebar-footer.css">
+    <link rel="stylesheet" href="./assets/css/main-content.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/feedback.css">
 </head>
 <body>
-    <h1>Página Principal</h1>
-    <form id="feedback-form">
-        <label for="username">Nome (opcional):</label>
-        <input type="text" id="username"><br><br>
-        <label for="company">Empresa (opcional):</label>
-        <input type="text" id="company"><br><br>
-        <label for="feedback">Feedback:</label>
-        <textarea id="feedback" required></textarea><br><br>
-        <button type="button" onclick="saveFeedback()">Salvar Feedback</button>
-    </form>
-    <br>
-    <a href="password.html">Ver Feedbacks</a>
-    <button class="buttonn" onclick="goBack()">Voltar</button>
 
-    <script src="assets/js/app.js"></script>
+    <main class="main-container">
+        <div class="header__navigation">
+            <div class="navigation">
+                <a href="index.html" class="arrow-left">
+                    <span class="fa fa-chevron-left"></span>
+                </a>
+            </div>
+            <div class="header__search" style="visibility: hidden;">
+            </div>
+            <div class="header__login">
+            </div>
+        </div>
+    
+        <div class="feedback-container">
+            <h1>Envie seu Feedback</h1>
+            <p>Obrigado por visitar meu portfólio! Deixe suas impressões, sugestões ou entre em contato diretamente.</p>
+            <form class="feedback-form" action="https://formspree.io/f/xqalnkpa" method="POST">
+                <label for="name">Seu Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Seu Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Enviar Feedback</button>
+            </form>
+            <div id="success-message" style="display: none; color: green; margin-top: 15px;">
+                Feedback enviado com sucesso! Obrigado pela sua mensagem.
+            </div>
+        </div>
+    </main>
+
+    <footer class="disclainer-premium">
+        <div class="text">
+            <p class="disclainer-premium__title">Pedro Batista</p>
+            <p class="disclainer-premium__subtitle">Desenvolvedor Front-end.</p>
+        </div>
+        <button class="disclainer-premium__button">
+            <a href="feedback.html">Deixe um feedback</a>
+        </button>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('.feedback-form');
+            const successMessage = document.getElementById('success-message');
+            
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                const formData = new FormData(form);
+                
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        form.style.display = 'none'; // Hide the form
+                        successMessage.style.display = 'block'; // Show the success message
+                    } else {
+                        alert('Ocorreu um erro ao enviar o feedback. Tente novamente mais tarde.');
+                    }
+                } catch (error) {
+                    alert('Ocorreu um erro ao enviar o feedback. Tente novamente mais tarde.');
+                }
+            });
+        });
+    </script>
 </body>
-<script>
-    function saveFeedback() {
-    const username = document.getElementById('username').value || 'Anônimo';
-    const company = document.getElementById('company').value || 'Sem Empresa';
-    const feedback = document.getElementById('feedback').value;
-
-    if (!feedback) {
-        alert('Por favor, preencha o campo de feedback.');
-        return;
-    }
-
-    const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
-    feedbacks.push({ username, company, feedback });
-
-    localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
-
-    alert('Feedback salvo com sucesso!');
-    document.getElementById('feedback-form').reset();
-}
-function goBack() {
-    window.location.href = 'index.html';
-}
-
-// Chama a função ao carregar a página
-window.onload = loadFeedbacks;
-</script>
 </html>

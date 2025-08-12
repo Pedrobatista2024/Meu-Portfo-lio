@@ -1,0 +1,259 @@
+.main-container {
+    margin-left: 320px;
+    margin-right: 10px;
+    padding-top: 90px; /* Adicionado para evitar que o conteúdo fique atrás do cabeçalho fixo */
+    width: 100%;
+}
+
+.main-header {
+    position: fixed; /* O cabeçalho agora está fixo no topo */
+    top: 0; /* Alinha o cabeçalho ao topo da página */
+    left: 320px; /* Alinha com a lateral do sidebar */
+    right: 10px; /* Mantém a margem da direita */
+    z-index: 1000; /* Garante que o cabeçalho fique sobre outros elementos */
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    margin: 10px 10px 0 0; /* Margem superior e lateral */
+    border-radius: 8px;
+    background-color: #121212;
+}
+
+/* Os estilos para as setas de navegação foram removidos */
+/* .main-header .navigation {
+    display: flex;
+    gap: 10px;
+}
+
+.main-header .navigation .arrow-left,
+.main-header .navigation .arrow-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a0a0a;
+    color: #fff;
+    border-radius: 50%;
+    border: none;
+    padding: 10px;
+} */
+
+.main-header .main-search {
+    position: relative;
+    width: 364px;
+}
+
+.main-header .main-search .fa {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #b3b3b3;
+}
+
+.main-header .main-search input {
+    width: 100%;
+    background-color: #242424;
+    border: none;
+    border-radius: 500px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 11px 40px;
+}
+
+.main-header .main-login {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-header .main-login .signup {
+    color: #a7a7a7;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-header .main-login .signup:hover {
+    color: #fff;
+}
+
+.main-header .main-login .signin {
+    background-color: #fff;
+    color: #000;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.main-header .main-login .signin:hover {
+    transform: scale(1.04);
+}
+
+.section-container {
+    padding: 16px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #121212;
+}
+
+.section-container .section-content {
+    margin: 24px;
+    padding: 24px;
+}
+
+.section-container h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.section-container .greeting-subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: #a7a7a7;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.section-container p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.educacao-list li {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.educacao-list li strong {
+    font-weight: 700;
+}
+
+/* Estilos para a seção de projetos e habilidades */
+.project-list-scrollable,
+.skill-list-scrollable {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 16px;
+}
+
+.project-list-scrollable::-webkit-scrollbar,
+.skill-list-scrollable::-webkit-scrollbar {
+    height: 8px;
+}
+
+.project-list-scrollable::-webkit-scrollbar-track,
+.skill-list-scrollable::-webkit-scrollbar-track {
+    background: #242424;
+    border-radius: 10px;
+}
+
+.project-list-scrollable::-webkit-scrollbar-thumb,
+.skill-list-scrollable::-webkit-scrollbar-thumb {
+    background: #5a5a5a;
+    border-radius: 10px;
+}
+
+.projects-grid,
+.skills-grid {
+    display: inline-flex;
+    gap: 20px;
+}
+
+.project-card,
+.skill-card {
+    background-color: #242424;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    padding: 16px;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    transition: background-color 0.3s ease;
+}
+
+.project-card:hover {
+    background-color: #333;
+}
+
+.project-card .card-img img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.skill-card .card-img {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Ajuste para imagens */
+}
+
+.skill-card .card-img img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card-text .project-name,
+.card-text .skill-name {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 4px;
+}
+
+.card-text .project-description,
+.card-text .skill-categorie {
+    display: block;
+    font-size: 14px;
+    color: #b3b3b3;
+    white-space: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.project-link,
+.project-readme-link {
+    display: block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #1DB954;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 500px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.project-link:hover,
+.project-readme-link:hover {
+    background-color: #1ed760;
+}
+
+.project-readme-link {
+    background-color: #242424;
+    border: 1px solid #5a5a5a;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 5px;
+}
+
+.project-card:hover .project-readme-link {
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,10 @@
+/* Variáveis de cores e fontes */
+:root {
+    --bg-color: #000;
+    --primary-color: #1DB954;
+    --secondary-color: #121212;
+    --sidebar-bg: #121212;
+    --text-color: #fff;
+    --text-secondary-color: #b3b3b3;
+    --font-dm-sans: "DM Sans", sans-serif;
+}

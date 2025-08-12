@@ -1,0 +1,199 @@
+/* Estilo geral para o corpo da página */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal do currículo */
+.curriculo-container {
+    width: 100%;
+    max-width: 1000px; /* Aumentado para melhor visualização em desktops */
+    margin: 20px auto;
+    background-color: #1d1d1d;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Seção da barra lateral */
+.sidebar {
+    background-color: #242424;
+    padding: 30px;
+    border-radius: 10px;
+    color: #b3b3b3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #1ed760;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.job-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1ed760;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-info a {
+    color: #b3b3b3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #fff;
+}
+
+.contact-info h3 {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.contact-info li {
+    margin-bottom: 8px;
+}
+
+/* Seção principal do currículo */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.section {
+    padding: 20px;
+    background-color: #242424;
+    border-radius: 10px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+    border-left: 4px solid #1ed760;
+    padding-left: 10px;
+}
+
+.experience-item,
+.education-item {
+    margin-bottom: 20px;
+}
+
+.experience-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.experience-company,
+.education-school {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1ed760;
+    margin-top: 5px;
+}
+
+.experience-date,
+.education-date {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin-top: 5px;
+}
+
+.experience-description {
+    font-size: 14px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.experience-description ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.skill-tag {
+    background-color: #1ed760;
+    color: #121212;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    .curriculo-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        margin: 10px;
+    }
+    .sidebar {
+        padding: 20px;
+    }
+    .profile-name {
+        font-size: 20px;
+    }
+    .job-title {
+        font-size: 14px;
+    }
+    .main-content {
+        gap: 20px;
+    }
+    .section-title {
+        font-size: 20px;
+    }
+}

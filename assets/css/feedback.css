@@ -1,0 +1,197 @@
+/* Estilos específicos para a página de feedback */
+body {
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilo para o cabeçalho de navegação */
+.header__navigation {
+    width: 100%;
+    padding: 20px;
+    background-color: #121212;
+    box-sizing: border-box;
+}
+
+/* Estilo para o botão de voltar */
+.arrow-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ed760;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.arrow-left .fa-chevron-left {
+    font-size: 1.2rem;
+}
+
+.arrow-left:hover {
+    background-color: #15a94a;
+    transform: scale(1.1);
+}
+
+/* Estilo para o container principal da página */
+.main-container {
+    flex: 1; /* Permite que o container principal ocupe o espaço restante */
+    display: center;
+    flex-direction: column; /* Organiza os itens verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Estilo para o container de feedback */
+.feedback-container {
+    background-color: #1d1d1d;
+    padding: 40px;
+    border-radius: 12px;
+    /* Removendo o margin-top para permitir a centralização completa */
+    max-width: 1200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+}
+
+.feedback-container h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1ed760;
+}
+
+.feedback-container p {
+    font-size: 1rem;
+    color: #b3b3b3;
+    margin-bottom: 30px;
+}
+
+/* Estilo para o formulário */
+.feedback-form label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.feedback-form input[type="text"],
+.feedback-form input[type="email"],
+.feedback-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #242424;
+    color: #fff;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-form input[type="text"]:focus,
+.feedback-form input[type="email"]:focus,
+.feedback-form textarea:focus {
+    border-color: #1ed760;
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 215, 96, 0.5);
+}
+
+.feedback-form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+/* Estilo para o botão de envio */
+.feedback-form button {
+    background-color: #1ed760;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-form button:hover {
+    background-color: #15a94a;
+    transform: translateY(-2px);
+}
+
+/* Estilos para o rodapé */
+.disclainer-premium {
+    background-color: #181818;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: auto;
+}
+
+.disclainer-premium__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.disclainer-premium__subtitle {
+    font-size: 0.9rem;
+    color: #1ed760;
+    margin: 0;
+}
+
+.disclainer-premium__button a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+/* Adicionado para estilizar a mensagem de sucesso */
+.success-message {
+    padding: 20px;
+    background-color: #1ed760;
+    color: #000;
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.success-message h1 {
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    font-size: 1.2rem;
+    color: #000;
+    margin: 5px 0;
+}
+
+/* Animação para um efeito de fade in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
