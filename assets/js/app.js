@@ -54,3 +54,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateArrowButtons(); // Atualiza o estado dos botões ao carregar a página
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const sidebarCloseToggle = document.querySelector('.sidebar-close-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    const toggleMenu = () => {
+        sidebar.classList.toggle('active');
+    };
+
+    if (mobileMenuToggle && sidebar) {
+        mobileMenuToggle.addEventListener('click', (event) => {
+            event.preventDefault();
+            toggleMenu();
+        });
+    }
+
+    if (sidebarCloseToggle && sidebar) {
+        sidebarCloseToggle.addEventListener('click', (event) => {
+            event.preventDefault();
+            toggleMenu();
+        });
+    }
+});
